@@ -14,7 +14,10 @@
             *Improve performance.*/
             #endregion
 
-            #region
+            #region Q2 Write a generic class Container<T> with Add and Get methods.
+            Container<int> c = new Container<int>();
+            c.Add(10);
+            Console.WriteLine(c.Get());
             #endregion
         }
     }
