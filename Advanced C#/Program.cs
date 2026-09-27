@@ -19,6 +19,10 @@
             c.Add(10);
             Console.WriteLine(c.Get());
             #endregion
+
+            #region Q3 What are multiple type parameters? Write Pair<TKey, TValue>.
+            Pair<int, string> p = new Pair<int, string>(1, "Mohamed");
+            #endregion
         }
     }
 }
