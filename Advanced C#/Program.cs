@@ -1,5 +1,6 @@
 ﻿namespace Advanced_C_
 {
+  
     internal class Program
     {
         static void Main(string[] args)
@@ -23,6 +24,19 @@
             #region Q3 What are multiple type parameters? Write Pair<TKey, TValue>.
             Pair<int, string> p = new Pair<int, string>(1, "Mohamed");
             #endregion
+
+            #region Q4: What is a generic method? Write Swap<T> method.
+            int x = 10;
+            int y = 20;
+
+            Swap(ref x, ref y);
+            #endregion
+        }
+        static void Swap<T>(ref T a, ref T b)
+        {
+            T temp = a;
+            a = b;
+            b = temp;
         }
     }
 }
