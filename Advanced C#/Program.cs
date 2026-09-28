@@ -102,6 +102,14 @@
             }*/
             #endregion
 
+            #region Q12 How do you apply multiple constraints? Write an example. 
+            /*Multiple constraints can be applied by writing them after the where keyword.
+
+            public class Example<T>
+            where T : Animal, IDisposable, new()
+            {
+            }*/
+            #endregion
 
         }
 
