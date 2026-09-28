@@ -159,6 +159,15 @@
             void Add(T item);
             }*/
             #endregion
+
+            #region Q17 What is the difference between covariance and contravariance?
+            /*Covariance uses the out keyword and works with output values.
+
+            Contravariance uses the in keyword and works with input values.
+
+            Covariance: out → Derived type to Base type.
+            Contravariance: in → Base type to Derived type.*/
+            #endregion
         }
 
     }
