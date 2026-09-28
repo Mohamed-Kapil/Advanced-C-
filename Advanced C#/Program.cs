@@ -90,6 +90,18 @@
             }*/
             #endregion
 
+            #region Q11 What is the base class constraint? Write an example.
+            /*A base class constraint specifies that the generic type must inherit from a specific base class.
+
+            public class Animal
+            {
+            }
+
+            public class Zoo<T> where T : Animal
+            {
+            }*/
+            #endregion
+
 
         }
 
