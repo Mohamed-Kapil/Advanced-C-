@@ -138,6 +138,17 @@
               }*/
             #endregion
 
+            #region Q15 What is covariance? Explain the 'out' keyword.
+            /*Covariance allows a generic type to use a more derived type where a base type is expected.
+
+            The out keyword is used for covariance.
+
+            public interface IProducer<out T>
+            {
+                T GetItem();
+            }*/
+            #endregion
+
         }
 
     }
