@@ -26,14 +26,25 @@
             #endregion
 
             #region Q4: What is a generic method? Write Swap<T> method.
+            /*static void Swap<T>(ref T a, ref T b)
+        {
+            T temp = a;
+            a = b;
+            b = temp;
+        }
             int x = 10;
             int y = 20;
 
-            Swap(ref x, ref y);
+            Swap(ref x, ref y);*/
             #endregion
 
             #region Q5 Write a generic method FindMax<T> that finds maximum value
-            Console.WriteLine(FindMax(10, 20));
+            /*public static T FindMax<T>(T a, T b)
+               where T : IComparable<T>
+             {
+            return a.CompareTo(b) > 0 ? a : b;
+              }
+            Console.WriteLine(FindMax(10, 20));*/
             #endregion
 
             #region Q6 What is a generic interface? Write IRepository<T>.
@@ -56,20 +67,23 @@
             #region Q8 What is the 'class' constraint? Write an example.
             /*The class constraint specifies that the type must be a reference type.*/
             Test_2<string> t2 = new Test_2<string>();
-#endregion
+            #endregion
+
+            #region Q9 What is the 'new()' constraint? Write an example.
+            /*Requires a parameterless constructor.
+
+            public class Factory<T>
+            where T : new()
+            {
+            public T Create()
+            {
+            return new T();
+            }
+            }*/
+            #endregion
 
 
-}
-static void Swap<T>(ref T a, ref T b)
-{
-T temp = a;
-a = b;
-b = temp;
-}
-public static T FindMax<T>(T a, T b)
-where T : IComparable<T>
-{
-return a.CompareTo(b) > 0 ? a : b;
-}
-}
+        }
+
+    }
 }
