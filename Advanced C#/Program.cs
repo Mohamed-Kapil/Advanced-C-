@@ -177,6 +177,24 @@
             public static int Count;
             }*/
             #endregion
+
+            #region Q19 How can you inherit from a generic class?
+            /*A class can inherit from a generic class by providing a type parameter.
+
+            public class Base<T>
+            {
+            }
+
+            public class Child<T> : Base<T>
+            {
+            }
+
+            A specific type can also be provided:
+
+            public class IntChild : Base<int>
+            {
+            }*/
+            #endregion
         }
 
     }
