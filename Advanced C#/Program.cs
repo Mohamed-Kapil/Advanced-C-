@@ -1,4 +1,6 @@
-﻿namespace Advanced_C_
+﻿using Advanced_C_.Q20;
+
+namespace Advanced_C_
 {
   
     internal class Program
@@ -194,6 +196,16 @@
             public class IntChild : Base<int>
             {
             }*/
+            #endregion
+
+            #region Q20 Complete Exercise - Create a generic Cache<TKey, TValue>with Add, Get, Remove, Contains, and expiration support.
+            Cache<int, string> cache = new Cache<int, string>();
+
+            cache.Add(1, "Mohamed", 60);
+
+            Console.WriteLine(cache.Get(1));
+
+            cache.Remove(1);
             #endregion
         }
 
