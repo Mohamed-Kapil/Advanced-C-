@@ -111,6 +111,16 @@
             }*/
             #endregion
 
+            #region Q13 What does the 'default' keyword do in generics?
+            /*The default keyword returns the default value of a type.
+
+            Examples:
+
+            default(int);      // 0
+            default(bool);     // false
+            default(string);   // null*/
+            #endregion
+
         }
 
     }
