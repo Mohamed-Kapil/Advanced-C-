@@ -82,6 +82,14 @@
             }*/
             #endregion
 
+            #region Q10  What is the interface constraint? Write an example.
+            /*An interface constraint specifies that the generic type must implement a specific interface.
+
+            public class Test<T> where T : IDisposable
+            {
+            }*/
+            #endregion
+
 
         }
 
