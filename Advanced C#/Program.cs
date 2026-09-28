@@ -168,6 +168,15 @@
             Covariance: out → Derived type to Base type.
             Contravariance: in → Base type to Derived type.*/
             #endregion
+
+            #region Q18 How do static members work in generic types? 
+            /*Each constructed generic type has its own separate static members.
+
+            public class Counter<T>
+            {
+            public static int Count;
+            }*/
+            #endregion
         }
 
     }
