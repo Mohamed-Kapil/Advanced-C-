@@ -48,6 +48,12 @@
 
             #endregion
 
+            #region Q7  What is the 'struct' constraint? Write an example.
+            /*The struct constraint specifies that the type must be a value type.*/
+            Test<int> t1 = new Test<int>();
+            #endregion
+
+
         }
         static void Swap<T>(ref T a, ref T b)
         {
