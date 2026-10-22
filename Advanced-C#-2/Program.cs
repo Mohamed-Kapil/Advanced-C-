@@ -37,7 +37,7 @@
             Console.WriteLine("\n--- Clothing Under $100 ---");
             var clothingUnder100 = SearchProducts(catalog, p => p.Category == "Clothing" && p.Price < 100);
             PrintList(clothingUnder100);
-            
+
             static List<Product> SearchProducts(List<Product> products, Func<Product, bool> filter)
             {
                 List<Product> result = new List<Product>();
@@ -78,6 +78,28 @@
             }
 
             #endregion
+
+            #region Task 3.2: Transform Products
+            Console.WriteLine("\n--- Summary List ---");
+            var summaryList = TransformProducts(catalog, p => $"{p.Name} (${p.Price})");
+            foreach (var item in summaryList)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("\n--- Price Labels ---");
+
+            static List<string> TransformProducts(List<Product> products, Func<Product, string> transform)
+            {
+                List<string> result = new List<string>();
+                foreach (var p in products)
+                {
+                    result.Add(transform(p));
+                }
+                return result;
+            }
+            #endregion
+
         }
     }
 }
