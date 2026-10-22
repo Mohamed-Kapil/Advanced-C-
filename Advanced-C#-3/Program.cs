@@ -95,6 +95,54 @@
                 }
             }
             #endregion
+
+            #region Exercise 3: Phone Book
+            Console.WriteLine("\n========== Exercise 3: Phone Book ==========");
+            Exercise3();
+
+            static void Exercise3()
+            {
+                // 1. Create a Collection with 4 contacts
+                Dictionary<string, string> phoneBook = new Dictionary<string, string>
+            {
+                { "Ahmed", "0101111111" },
+                { "Sara", "0112222222" },
+                { "Mona", "0123333333" },
+                { "Ali", "0154444444" }
+            };
+
+                // 2. Add a new contact using [] syntax (add or update)
+                phoneBook["Omar"] = "0109999999";
+
+                // 3. Try adding a duplicate using .Add() — catch the exception
+                try
+                {
+                    phoneBook.Add("Ahmed", "0100000000");
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine($".Add() Duplicate Error: {ex.Message}");
+                }
+
+                // 4. Try adding a duplicate using .TryAdd() — print whether it succeeded
+                bool isAdded = phoneBook.TryAdd("Sara", "0110000000");
+                Console.WriteLine($".TryAdd() success for 'Sara'? {isAdded}");
+
+                // 5. Search for a contact that doesn’t exist
+                Console.WriteLine($"Does 'Youssef' exist? {phoneBook.ContainsKey("Youssef")}");
+
+                // 6. Get a contact with a fallback of "Not Found"
+                // Note: GetValueOrDefault is available in newer C# versions. 
+                // Alternatively: phoneBook.TryGetValue("Youssef", out var num) ? num : "Not Found";
+                string fallbackNumber = phoneBook.GetValueOrDefault("Youssef", "Not Found");
+                Console.WriteLine($"Number for 'Youssef': {fallbackNumber}");
+
+                // 7. Print all Keys on one line, then all Values on another line
+                Console.WriteLine($"Keys: {string.Join(" | ", phoneBook.Keys)}");
+                Console.WriteLine($"Values: {string.Join(" | ", phoneBook.Values)}");
+            }
+
+            #endregion
         }
     }
 }
