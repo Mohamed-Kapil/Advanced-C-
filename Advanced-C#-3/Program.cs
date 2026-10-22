@@ -45,6 +45,56 @@
                 formattedGrades.ForEach(g => Console.WriteLine(g));
             }
             #endregion
+
+            #region Exercise 2: Leaderboard
+            Console.WriteLine("\n========== Exercise 2: Leaderboard ==========");
+            Exercise2();
+
+            static void Exercise2()
+            {
+                // 1. Create a leaderboard (SortedList automatically sorts by key ascending)
+                // Using Score as Key, and Name as Value.
+                SortedList<int, string> leaderboard = new SortedList<int, string>
+            {
+                { 500, "Ahmed" },
+                { 200, "Sara" },
+                { 800, "Ali" },
+                { 350, "Mona" }
+            };
+
+                // 2. Print all entries (they should be sorted by score automatically)
+                Console.WriteLine("Leaderboard:");
+                foreach (var entry in leaderboard)
+                {
+                    Console.WriteLine($"{entry.Key} = {entry.Value}");
+                }
+
+                // 3. Access the first key and first value
+                Console.WriteLine($"First Key (Lowest Score): {leaderboard.Keys[0]}");
+                Console.WriteLine($"First Value: {leaderboard.Values[0]}");
+
+                // 4. Check if score 500 exists
+                Console.WriteLine($"Does score 500 exist? {leaderboard.ContainsKey(500)}");
+
+                // 5. Safely get the player with score 999
+                if (leaderboard.TryGetValue(999, out string player))
+                {
+                    Console.WriteLine($"Player with score 999: {player}");
+                }
+                else
+                {
+                    Console.WriteLine("Player with score 999 not found.");
+                }
+
+                // 6. Remove the player with score 200 and print the updated list
+                leaderboard.Remove(200);
+                Console.WriteLine("Leaderboard after removing score 200:");
+                foreach (var entry in leaderboard)
+                {
+                    Console.WriteLine($"{entry.Key} = {entry.Value}");
+                }
+            }
+            #endregion
         }
     }
 }
