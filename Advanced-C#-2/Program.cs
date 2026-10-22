@@ -59,6 +59,25 @@
                 }
             }
             #endregion
+
+            #region Task 3.1: Print Reports
+
+            Console.WriteLine("\n\n=== Task 03: Custom Report Generator ===");
+            Console.WriteLine("\n--- Short Report ---");
+            PrintReport(catalog, p => Console.WriteLine($"{p.Name} - ${p.Price}"));
+
+            Console.WriteLine("\n--- Detailed Report ---");
+            PrintReport(catalog, p => Console.WriteLine($"[{p.Category}] {p.Name} | Price: ${p.Price} | Stock: {p.Stock}"));
+
+            static void PrintReport(List<Product> products, Action<Product> printAction)
+            {
+                foreach (var p in products)
+                {
+                    printAction(p);
+                }
+            }
+
+            #endregion
         }
     }
 }
