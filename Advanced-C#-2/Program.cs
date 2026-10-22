@@ -100,6 +100,28 @@
             }
             #endregion
 
+            #region Task 3.3: Filter Products
+            Console.WriteLine("\n--- Low-Stock Alert ---");
+            var lowStockProducts = FilterProducts(catalog, p => p.Stock < 20);
+            foreach (var p in lowStockProducts)
+            {
+                Console.WriteLine($"[LOW STOCK] {p.Name}: only {p.Stock} left!");
+            }
+
+            static List<Product> FilterProducts(List<Product> products, Predicate<Product> condition)
+            {
+                List<Product> result = new List<Product>();
+                foreach (var p in products)
+                {
+                    if (condition(p))
+                    {
+                        result.Add(p);
+                    }
+                }
+                return result;
+            }
+
+            #endregion
         }
     }
 }
