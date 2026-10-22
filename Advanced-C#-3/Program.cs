@@ -143,6 +143,51 @@
             }
 
             #endregion
+
+            #region Exercise 4: Unique Email Validator
+            Console.WriteLine("\n========== Exercise 4: Unique Email Validator ==========");
+            Exercise4();
+
+
+            static void Exercise4()
+            {
+                // 1. Create a HashSet<string> with a case-insensitive comparer
+                HashSet<string> emails = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+                // 2. Add these emails
+                emails.Add("ahmed@test.com");
+                emails.Add("AHMED@test.com");
+                emails.Add("sara@test.com");
+                emails.Add("Sara@Test.Com");
+
+                // 3. Print Count — Explain why
+                Console.WriteLine($"Emails Count: {emails.Count}");
+                Console.WriteLine("Explanation: The count is 2 because we used 'StringComparer.OrdinalIgnoreCase'. It treats 'ahmed@test.com' and 'AHMED@test.com' as duplicates, and the same for Sara's email.");
+
+                // 4. Create two sets
+                HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
+                HashSet<int> setB = new HashSet<int> { 4, 5, 6, 7, 8 };
+
+                // 5. Print the result of: UnionWith, IntersectWith, ExceptWith
+                // Note: These methods modify the original set, so we clone SetA to show correct results for each.
+
+                HashSet<int> unionSet = new HashSet<int>(setA);
+                unionSet.UnionWith(setB);
+                Console.WriteLine($"UnionWith: {string.Join(", ", unionSet)}");
+
+                HashSet<int> intersectSet = new HashSet<int>(setA);
+                intersectSet.IntersectWith(setB);
+                Console.WriteLine($"IntersectWith: {string.Join(", ", intersectSet)}");
+
+                HashSet<int> exceptSet = new HashSet<int>(setA);
+                exceptSet.ExceptWith(setB);
+                Console.WriteLine($"ExceptWith (A - B): {string.Join(", ", exceptSet)}");
+
+                // 6. Use IsSubsetOf to check if {1,2} is a subset of Set A
+                HashSet<int> subsetCheck = new HashSet<int> { 1, 2 };
+                Console.WriteLine($"Is {{1,2}} a subset of Set A? {subsetCheck.IsSubsetOf(setA)}");
+            }
+            #endregion
         }
     }
 }
