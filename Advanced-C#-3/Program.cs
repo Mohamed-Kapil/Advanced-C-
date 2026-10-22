@@ -188,6 +188,43 @@
                 Console.WriteLine($"Is {{1,2}} a subset of Set A? {subsetCheck.IsSubsetOf(setA)}");
             }
             #endregion
+
+            #region Exercise 5: Print Queue Simulator
+
+            Console.WriteLine("\n========== Exercise 5: Print Queue Simulator ==========");
+            Exercise5();
+
+            static void Exercise5()
+            {
+                // 1. Create a Queue<string> and enqueue 5 documents
+                Queue<string> printQueue = new Queue<string>();
+                printQueue.Enqueue("Report.pdf");
+                printQueue.Enqueue("Invoice.pdf");
+                printQueue.Enqueue("Letter.docx");
+                printQueue.Enqueue("Resume.pdf");
+                printQueue.Enqueue("Photo.jpg");
+
+                // Print the queue contents and Count
+                Console.WriteLine($"Queue Contents: {string.Join(", ", printQueue)}");
+                Console.WriteLine($"Queue Count: {printQueue.Count}");
+
+                // 2. Use Peek to see which document will print next
+                Console.WriteLine($"Next document to print (Peek): {printQueue.Peek()}");
+
+                // 3. Process the queue: Dequeue each document
+                Console.WriteLine("Processing Queue:");
+                while (printQueue.Count > 0)
+                {
+                    string doc = printQueue.Dequeue();
+                    Console.WriteLine($"Printing: {doc}");
+                }
+
+                // 4. Try TryDequeue on the now-empty queue — what happens?
+                bool success = printQueue.TryDequeue(out string missingDoc);
+                Console.WriteLine($"TryDequeue on empty queue succeeded? {success}");
+                // What happens: It returns false and does not throw an Exception. The out variable is null.
+            }
+            #endregion
         }
     }
 }
