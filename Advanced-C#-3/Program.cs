@@ -225,6 +225,44 @@
                 // What happens: It returns false and does not throw an Exception. The out variable is null.
             }
             #endregion
+
+            #region Exercise 6: Browser History (Undo)
+
+            Console.WriteLine("\n========== Exercise 6: Browser History (Undo) ==========");
+            Exercise6();
+
+            static void Exercise6()
+            {
+                // 1. Create a Stack<string> for browser history and push 5 URLs
+                Stack<string> browserHistory = new Stack<string>();
+                browserHistory.Push("google.com");
+                browserHistory.Push("github.com");
+                browserHistory.Push("stackoverflow.com");
+                browserHistory.Push("youtube.com");
+                browserHistory.Push("claude.ai");
+
+                // 2. Use Peek to see the current page
+                Console.WriteLine($"Current page (Peek): {browserHistory.Peek()}");
+
+                // 3. Press "back" 3 times using Pop — print each page you leave
+                Console.WriteLine("Pressing Back 3 times:");
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.WriteLine($"Leaving: {browserHistory.Pop()}");
+                }
+
+                // 4. Print the current page after going back
+                Console.WriteLine($"Current page after going back: {browserHistory.Peek()}");
+
+                // 5. Try TryPop on an empty stack — what happens?
+                // First let's empty it completely
+                browserHistory.Clear();
+
+                bool success = browserHistory.TryPop(out string failedUrl);
+                Console.WriteLine($"TryPop on empty stack succeeded? {success}");
+                // What happens: It returns false safely without crashing, and out variable gets null.
+            }
+            #endregion
         }
     }
 }
